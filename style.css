@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.menu-bar {
+    background: rgb(0, 0, 100);
+    text-align: center;
+}
+
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+
+.menu-bar ul li {
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.active,
+.menu-bar ul li:hover {
+    background-color: #2bab0d;
+    border-radius: 2px;
+}
+
+.sub-menu-1 {
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+    display: block;
+    background-color: rgb(0, 100, 0);
+    margin-top: 15px;
+    margin-left: -15px;
+}
+
+.wrapper {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.welcome h1 {
+    font-size: 60px;
+    font-weight: 100;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    color: #232d60;
+}
+
+.welcome p {
+    font-size: 20px;
+    color: #6a7199;
+}
+
+.welcome {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.welcome .btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #87adfe, #ff77cd);
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 3px 8px 22px rgba(94, 28, 68, 0.15);
+}
+
+.arrow-icons {
+    margin-top: 40px;
+    display: flex;
+}
+
+.arrow-icons img {
+    width: 40px;
+    margin-right: 25px;
+}
+
+.feature-img {
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    right: 160px;
+}
