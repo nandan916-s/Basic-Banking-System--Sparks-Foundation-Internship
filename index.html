@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>Banking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="styplepic.css">
+    <link rel="stylesheet" href="clock.css">
+</head>
+
+<body>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">About us</a></li>
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Vision</a></li>
+                </ul>
+            </div>
+            <li><a href="charges.html">How to transfer</a></li>
+            <li><a href="trans.html">Transfer money</a></li>
+        </ul>
+    </div>
+    <div class="welcome">
+        <h1>Welcome to Sparks Bank <br/>Miss.Kavita</h1>
+        <br/>
+        <p>Hope your day is good and your are doing well</p>
+        <br/><br/>
+        <a href="trans.html" class="btn">Transact Now</a>
+
+        <div class="arrow-icons">
+            <img src="back-arrow.png">
+            <img src="next-arrow.png">
+
+        </div>
+        <img src="img1.png" class="feature-img">
+    </div>
+</body>
+
+<body onload="initClock()">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <!--digital clock start-->
+    <div class="datetime">
+        <div class="date">
+            <span id="dayname">Day</span>,
+            <span id="month">Month</span>
+            <span id="daynum">00</span>,
+            <span id="year">Year</span>
+        </div>
+        <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+        </div>
+    </div>
+    <!--digital clock end-->
+
+    <script type="text/javascript">
+        function updateClock() {
+            var now = new Date();
+            var dname = now.getDay(),
+                mo = now.getMonth(),
+                dnum = now.getDate(),
+                yr = now.getFullYear(),
+                hou = now.getHours(),
+                min = now.getMinutes(),
+                sec = now.getSeconds(),
+                pe = "AM";
+
+            if (hou >= 12) {
+                pe = "PM";
+            }
+            if (hou == 0) {
+                hou = 12;
+            }
+            if (hou > 12) {
+                hou = hou - 12;
+            }
+
+            Number.prototype.pad = function(digits) {
+                for (var n = this.toString(); n.length < digits; n = 0 + n);
+                return n;
+            }
+
+            var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+            var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+            for (var i = 0; i < ids.length; i++)
+                document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+        }
+
+        function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1);
+        }
+    </script>
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+    <!-- aos data  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+        });
+    </script>
+</body>
+
+</html>
